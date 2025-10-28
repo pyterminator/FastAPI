@@ -99,9 +99,10 @@ def index(age:int):
 ```
 
 ### ✅ uvicorn index:app --reload nə deməkdir ?
-uvicorn - istifadə etdiyimiz server
-index - kodları yazdığımız python faylının adı
-app - index faylında yaratdığımız app (myapp adı verdik videoda)
---reload - kodlarda dəyişiklik etdikdə yenidən server çalışdırmağa ehtiyac olmur (development modda kömək olur bizə)
+
+- `uvicorn` – istifadə etdiyimiz server
+- `index` – kodları yazdığımız Python faylının adı
+- `myapp` – `index.py` faylında yaratdığımız FastAPI `app` obyekti
+- `--reload` – kodlarda dəyişiklik etdikdə server avtomatik yenidən işə düşür (development mod üçün)
 
 ### 🎯 Nəticə: Bu dərsdə biz path parametrlərindən istifadə etməyi, swagger və redoc interfeyslərini, və serveri çalışdırdıqda yazdığımız əmri izah etdim.
