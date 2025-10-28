@@ -83,3 +83,25 @@ def index():
 ```
 
 ### 🎯 Nəticə: Bu dərsdə FastAPI üçün lazım olan mühit quraşdırıldı, ilk API tətbiqi yaradıldı və GET sorğusuna cavab verən funksiya yazıldı.
+
+## 🎬 2-ci Video: [FastAPI Azərbaycanca: Yükləmə və Çalışdırma](https://youtu.be/ZpE-Si60dak)
+
+Bu videoda aşağıdakı mövzular izah olunur:
+
+### ✅ Path parametrləri
+```bash
+@myapp.get('/{age}')
+def index(age:int):
+    return {
+        "name": "Mushvig",
+        "age": age + 9
+    }
+```
+
+### ✅ uvicorn index:app --reload nə deməkdir ?
+uvicorn - istifadə etdiyimiz server
+index - kodları yazdığımız python faylının adı
+app - index faylında yaratdığımız app (myapp adı verdik videoda)
+--reload - kodlarda dəyişiklik etdikdə yenidən server çalışdırmağa ehtiyac olmur (development modda kömək olur bizə)
+
+### 🎯 Nəticə: Bu dərsdə biz path parametrlərindən istifadə etməyi, swagger və redoc interfeyslərini, və serveri çalışdırdıqda yazdığımız əmri izah etdim.
