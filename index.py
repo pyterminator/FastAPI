@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 
-app = FastAPI()
+myapp = FastAPI()
 
-@app.get('/')
-def index():
+@myapp.get('/{age}')
+def index(age:int):
     return {
         "name": "Mushvig",
-        "age": 23
+        "age": age + 9
     }
