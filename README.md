@@ -28,7 +28,10 @@ Bu repozitoriya **YouTube kanalımda paylaşdığım FastAPI dərslərinin yazı
 📺 **Bütün dərsləri izləmək üçün:**
 🎯 **[PyTerminator](https://youtube.com/playlist?list=PLvAB7yjjF8026sMZvGM-N5ZNhnnYsChJk&si=XndSX5z5tIkklRlC)**
 
-## Dəstək
-Əgər bu resurs sənə faydalıdırsa:
-Youtube kanalıma abunə ol  
-⭐ Bu repo-ya star ver ⭐
+
+## 🙌 Sənin dəstəyin mənim üçün vacibdir!
+
+Bu dərslərin davam etməsini istəyirsənsə:
+
+➡️ YouTube kanalım **PyTerminator**-a abunə ol  
+➡️ Bu repositoriyaya ⭐ star verərək motivasiya olmağıma kömək et
