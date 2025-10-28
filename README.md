@@ -35,3 +35,45 @@ Bu dərslərin davam etməsini istəyirsənsə:
 
 ➡️ YouTube kanalım **PyTerminator**-a abunə ol  
 ➡️ Bu repositoriyaya ⭐ star verərək motivasiya olmağıma kömək et
+
+
+<hr>
+
+## 🎬 1-ci Video: [FastAPI Azərbaycanca: Yükləmə və Çalışdırma](https://youtu.be/CfEeCtr_0ac)
+
+Bu videoda aşağıdakı mövzular izah olunur:
+
+### ✅ Virtual mühitin (venv) yaradılması
+```bash
+python -m venv venv
+```
+
+### ✅ Visual Studio Code-da venv aktiv edilməsi
+
+#### ➡ Terminalda aktiv etdikdən sonra paketləri quraşdırdıq:
+
+```bash
+pip install fastapi
+pip install uvicorn
+```
+### ✅ Layihə faylının yaradılması (index.py)
+
+```bash
+from fastapi import FastAPI
+
+app = FastAPI()
+```
+
+### ✅ İlk GET endpoint yazdıq
+#### Base URL-ə (http://127.0.0.1:8000) sorğu göndərildikdə aşağıdakı cavab qaytarılır:
+
+```bash
+@app.get("/")
+def index():
+    return {
+        "name": "Mushvig",
+        "age": 23
+    }
+```
+
+### 🎯 Nəticə: Bu dərsdə FastAPI üçün lazım olan mühit quraşdırıldı, ilk API tətbiqi yaradıldı və GET sorğusuna cavab verən funksiya yazıldı.
