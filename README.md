@@ -11,3 +11,19 @@
 <img src="https://img.shields.io/badge/Status-Aktiv%20Layihə-success" />
 </a>
 </p>
+
+## 📘 Haqqında
+
+Bu repozitoriya **YouTube kanalımda paylaşdığım FastAPI dərslərinin yazılı izahlarını**, kod nümunələrini və real layihə tətbiqlərini özündə cəmləşdirir. Məqsəd – yalnız videoya baxmaqla kifayətlənməyəsən, həm də **praktiki və strukturlaşdırılmış dokumentasiya ilə mövzunu dərindən mənimsəyəsən**.
+
+## 🎯 Bu sənə nə verəcək?
+
+✅ FastAPI-nin əsas və professional səviyyələrini addım-addım öyrənmək  
+✅ REST API arxitekturası üzrə real dünya nümunələri  
+✅ Backend development üçün lazımi konsepsiyaları başa düşmək  
+✅ YouTube dərsləri ilə sinxron yazılı tədris materialı  
+
+## 🔗 YouTube Playlist
+
+📺 **Bütün dərsləri izləmək üçün:**
+https://youtube.com/playlist?list=PLvAB7yjjF8026sMZvGM-N5ZNhnnYsChJk&si=XndSX5z5tIkklRlC
