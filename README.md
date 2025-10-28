@@ -84,7 +84,7 @@ def index():
 
 ### 🎯 Nəticə: Bu dərsdə FastAPI üçün lazım olan mühit quraşdırıldı, ilk API tətbiqi yaradıldı və GET sorğusuna cavab verən funksiya yazıldı.
 
-## 🎬 2-ci Video: [FastAPI Azərbaycanca: Yükləmə və Çalışdırma](https://youtu.be/ZpE-Si60dak)
+## 🎬 2-ci Video: [FastAPI Azərbaycanca: Path parametrləri](https://youtu.be/ZpE-Si60dak)
 
 Bu videoda aşağıdakı mövzular izah olunur:
 
