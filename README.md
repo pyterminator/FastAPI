@@ -102,7 +102,7 @@ def index(age:int):
 
 - `uvicorn` – istifadə etdiyimiz server
 - `index` – kodları yazdığımız Python faylının adı
-- `myapp` – `index.py` faylında yaratdığımız FastAPI `app` obyekti
+- `app` – `index.py` faylında yaratdığımız FastAPI `app` obyekti
 - `--reload` – kodlarda dəyişiklik etdikdə server avtomatik yenidən işə düşür (development mod üçün)
 
 ### 🎯 Nəticə: Bu dərsdə biz path parametrlərindən istifadə etməyi, swagger və redoc interfeyslərini, və serveri çalışdırdıqda yazdığımız əmri izah etdim.
