@@ -1,6 +1,6 @@
+import uvicorn
 from fastapi import FastAPI
 from typing import Optional
-import uvicorn
 
 app = FastAPI()
 
@@ -45,6 +45,5 @@ def users(id:Optional[int]=None, age:int|None=None):
         return "Not found!!"
     return users_list
 
-
-# if __name__ == "__main__":
-#     uvicorn.run("index:app", host="127.0.1.1", port=8080, reload=True)
+if __name__ == "__main__":
+    uvicorn.run(app="index:app", port=9000, reload=True, host="127.1.1.1")
