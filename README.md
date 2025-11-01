@@ -40,50 +40,51 @@ Bu dərslərin davam etməsini istəyirsənsə:
 <hr>
 
 ## 🎬 1-ci Video: [FastAPI Azərbaycanca: Yükləmə və Çalışdırma](https://youtu.be/CfEeCtr_0ac)
+<details>
+    <summary> Açıqlama </summary>
+    Bu videoda aşağıdakı mövzular izah olunur:
 
-Bu videoda aşağıdakı mövzular izah olunur:
+    ### ✅ Virtual mühitin (venv) yaradılması
+    ```bash
+    python -m venv venv
+    ```
 
-### ✅ Virtual mühitin (venv) yaradılması
-```bash
-python -m venv venv
-```
+    ### ✅ Visual Studio Code-da venv aktiv edilməsi
 
-### ✅ Visual Studio Code-da venv aktiv edilməsi
+    #### ➡ Terminalda aktiv etdikdən sonra paketləri quraşdırdıq:
 
-#### ➡ Terminalda aktiv etdikdən sonra paketləri quraşdırdıq:
+    ```bash
+    pip install fastapi
+    pip install uvicorn
+    ```
+    ### ✅ Layihə faylının yaradılması (index.py)
+    #### Burda biz bir app yaratdıq
+    ```bash
+    from fastapi import FastAPI
 
-```bash
-pip install fastapi
-pip install uvicorn
-```
-### ✅ Layihə faylının yaradılması (index.py)
-#### Burda biz bir app yaratdıq
-```bash
-from fastapi import FastAPI
+    app = FastAPI()
+    ```
 
-app = FastAPI()
-```
+    ### ✅ İlk GET endpoint yazdıq
+    #### Base URL-ə (http://127.0.0.1:8000) sorğu göndərildikdə aşağıdakı funksiya işə düşür:
 
-### ✅ İlk GET endpoint yazdıq
-#### Base URL-ə (http://127.0.0.1:8000) sorğu göndərildikdə aşağıdakı funksiya işə düşür:
+    ```bash
+    @app.get("/")
+    def index():
+        return {
+            "name": "Mushvig",
+            "age": 23
+        }
+    ```
 
-```bash
-@app.get("/")
-def index():
-    return {
-        "name": "Mushvig",
-        "age": 23
-    }
-```
+    ### ✅ Url-ə daxil olduqda bizə json data qaytarır 
 
-### ✅ Url-ə daxil olduqda bizə json data qaytarır 
+    ```bash
+    {"name":"Mushvig","age":23}
+    ```
 
-```bash
-{"name":"Mushvig","age":23}
-```
-
-### 🎯 Nəticə: Bu dərsdə FastAPI üçün lazım olan mühit quraşdırıldı, ilk API tətbiqi yaradıldı və GET sorğusuna cavab verən funksiya yazıldı.
-
+    ### 🎯 Nəticə: Bu dərsdə FastAPI üçün lazım olan mühit quraşdırıldı, ilk API tətbiqi yaradıldı və GET sorğusuna cavab verən funksiya yazıldı.
+</details>
 ## 🎬 2-ci Video: [FastAPI Azərbaycanca: Path parametrləri](https://youtu.be/ZpE-Si60dak)
 
 Bu videoda aşağıdakı mövzular izah olunur:
