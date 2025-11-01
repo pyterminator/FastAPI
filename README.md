@@ -113,3 +113,37 @@ def index(age:int):
 
 ### 🎯 Nəticə: Bu dərsdə biz path parametrlərindən istifadə etməyi, swagger və redoc interfeyslərini, və serveri çalışdırdıqda yazdığımız əmri izah etdim.
 </details>
+
+<hr/>
+
+## 🎬 3-cü Video: [FastAPI Azərbaycanca: Query parametrləri](https://youtu.be/yHjIigX7MOA)
+<details>
+<summary> Açıqlama </summary>
+Bu videoda aşağıdakı mövzular izah olunur:
+
+### ✅ Query parametrləri 
+Query parametrlər URL-də verilən əlavə məlumatlardır. Onlar sorğunu daha spesifik etmək və serverə istifadəçi tərəfindən göndərilən məlumatı çatdırmaq üçün istifadə olunur.
+
+> Məsələn, URL belə görünə bilər:  
+> `http://127.0.0.1:8000/users?id=1&age=23`
+
+### Niyə istifadə olunur?
+- Sorğunu filtr etmək üçün  
+- Məlumatları sıralamaq üçün  
+- Optional (istəyə bağlı) məlumat göndərmək üçün 
+
+```python
+from fastapi import FastAPI
+from typing import Optional
+
+@app.get('/users')
+def users(id:Optional[int]=None, age:int|None=None):
+    # burda gələn parametrlərə uygun olaraq userləri filterləyib return edə bilərik
+    ...
+```
+
+💡 Qeydlər:
+- Query parametrlər optional ola bilər, yəni istifadəçi bu məlumatları göndərməyə də bilər.
+- FastAPI-də default dəyər təyin edərək optional parametrləri idarə etmək olar.
+
+</details>
