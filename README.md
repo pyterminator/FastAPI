@@ -85,7 +85,12 @@ def index():
 
 ### 🎯 Nəticə: Bu dərsdə FastAPI üçün lazım olan mühit quraşdırıldı, ilk API tətbiqi yaradıldı və GET sorğusuna cavab verən funksiya yazıldı.
 </details>
+
+<hr />
+
 ## 🎬 2-ci Video: [FastAPI Azərbaycanca: Path parametrləri](https://youtu.be/ZpE-Si60dak)
+<details>
+<summary> Açıqlama </summary>
 
 Bu videoda aşağıdakı mövzular izah olunur:
 
@@ -107,3 +112,4 @@ def index(age:int):
 - `--reload` – kodlarda dəyişiklik etdikdə server avtomatik yenidən işə düşür (development mod üçün)
 
 ### 🎯 Nəticə: Bu dərsdə biz path parametrlərindən istifadə etməyi, swagger və redoc interfeyslərini, və serveri çalışdırdıqda yazdığımız əmri izah etdim.
+</details>
