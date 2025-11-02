@@ -155,7 +155,7 @@ def users(id:Optional[int]=None, age:int|None=None):
 <summary> Açıqlama </summary>
 
 ### Port nədir ?
-Kompüterdə və ya serverdə müxtəlif tətbiqlərin bir-birindən asılı olmadan eyni anda işləməsini təmin edən “giriş nöqtəsidir”. <br>
+Komputerdə və ya serverdə müxtəlif tətbiqlərin bir-birindən asılı olmadan eyni anda işləməsini təmin edən “giriş nöqtəsidir”. <br>
 Sadə desək, IP adres binadırsa, port həmin binadakı mənzildir. Hər xidmət (məsələn, FastAPI, MySQL, Redis və s.) öz portunda işləyir.<br>
 Məsələn: <br>
 - 8000 — FastAPI-nin default portu
