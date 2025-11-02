@@ -146,4 +146,44 @@ def users(id:Optional[int]=None, age:int|None=None):
 - Query parametrlər optional ola bilər, yəni istifadəçi bu məlumatları göndərməyə də bilər.
 - FastAPI-də default dəyər təyin edərək optional parametrləri idarə etmək olar.
 
+<hr>
+
+</details>
+
+## 🎬 4-cü Video: [FastAPI Azərbaycanca: Serveri fərqli portda run etmək](https://youtu.be/P2IXLx7qgzs)
+<details>
+<summary> Açıqlama </summary>
+
+### Port nədir ?
+Kompüterdə və ya serverdə müxtəlif tətbiqlərin bir-birindən asılı olmadan eyni anda işləməsini təmin edən “giriş nöqtəsidir”.
+Sadə desək, IP adres binadırsa, port həmin binadakı mənzildir. Hər xidmət (məsələn, FastAPI, MySQL, Redis və s.) öz portunda işləyir.
+Məsələn:
+🔹 8000 — FastAPI-nin default portu
+🔹 5432 — PostgreSQL
+🔹 3306 — MySQL
+
+### Niyə portu dəyişməyə ehtiyac duyuruq?
+Bəzi hallarda eyni portu başqa proqram artıq istifadə edir. Bu zaman serveri həmin portda işə salmaq mümkün olmur.
+Ona görə portu dəyişmək lazım olur. Məsələn:
+
+🔹 Eyni komputerdə bir neçə FastAPI tətbiqi işləyirsə
+🔹 Backend və frontend serverləri fərqli portlarda işləməlidirsə
+        - Məsələn: React → 3000, FastAPI → 8000
+🔹 Və ya sadəcə test mühitində fərqli konfiqurasiyalar sınaqdan keçirilirsə
+        - Məsələn: development və production üçün fərqli portlar
+#### Bu hallarda portu dəyişmək, tətbiqlərin toqquşmadan (conflict) işləməsinə imkan yaradır.
+
+### ✅ Serveri fərqli portda run edirik
+
+- `uvicorn main:app --port 8080` əmri ilə portu dəyişmək mümkündür. Və ya :
+
+
+```python
+if __name__ == "__main__":
+    uvicorn.run(app="index:app", port=9000, reload=True, host="127.1.1.1")
+```
+
+Portu dəyişmək üçün yuxarıdakı kod blokunda gördüyünüz formada portu dəyişmək olar.
+Bu halda proyekti run etmək üçün ``` python index.py ``` əmrini terminalda yazmaq lazımdır.
+
 </details>
