@@ -1,0 +1,55 @@
+from fastapi import APIRouter, HTTPException, status
+from todo.schemes import ShowTodo, TodoValidate, ChangeStatus
+from todo.models import Todo
+
+router = APIRouter()
+
+
+
+@router.get("/", response_model=list[ShowTodo], tags=["Todo items"])
+async def get_todo_items():
+    todo_items = await Todo.all()
+    return todo_items
+
+@router.post("/create/", status_code=status.HTTP_201_CREATED, tags=["Create new todo item"])
+async def create_todo_item(todo_item: TodoValidate):
+    new_todo = await Todo.create(description=todo_item.description, is_active=todo_item.is_active)
+    return {"detail": f"{new_todo.id} nömrəli tapşırıq əlavə edildi!"}
+
+@router.get("/{pk}", response_model=ShowTodo, tags=['Get todo item'])
+async def get_todo_item(pk: int):
+    if todo_item := await Todo.get_or_none(id=pk):
+        return todo_item
+    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail = f"{pk} nömrəli tapşırıq tapılmadı!")
+
+@router.delete('/delete/{pk}/', tags=["Delete todo item"])
+async def delete_todo_item(pk: int):
+    todo_item = await Todo.get_or_none(id=pk)
+    if todo_item is not None:
+        await todo_item.delete()
+        return {"detail": f"{pk} nömrəli tapşırıq silindi!"}
+    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail = f"{pk} nömrəli tapşırıq tapılmadı!")
+
+@router.delete('/delete/', tags=["Delete all todo items"])
+async def delete_deactive_todo_items():
+    todo_items = await Todo.filter(is_active=False)
+    for item in todo_items: 
+        await item.delete()
+    return {"detail": "Tapşırıqlar silindi!"}
+
+@router.patch("/update/{pk}/status/", tags=["Change status of todo item"])
+async def update_todo_item(pk:int, data: ChangeStatus):
+    if todo_item := await Todo.get_or_none(id=pk):
+        todo_item.is_active = data.is_active
+        await todo_item.save()
+        return {"detail":f"{pk} nömrəli tapşırığın aktivlik statusu dəyişdi."}
+    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail = f"{pk} nömrəli tapşırıq tapılmadı!")
+
+@router.put("/update/{pk}/", tags=["Update todo item"])
+async def update_todo_item(pk:int, data: TodoValidate):
+    if todo_item := await Todo.get_or_none(id=pk):
+        todo_item.is_active = data.is_active
+        todo_item.description = data.description
+        await todo_item.save()
+        return {"detail":f"{pk} nömrəli tapşırıq güncəlləndi."}
+    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail = f"{pk} nömrəli tapşırıq tapılmadı!")

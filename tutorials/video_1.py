@@ -1,10 +1,10 @@
-from fastapi import FastAPI
+# from fastapi import FastAPI
 
-app = FastAPI()
+# app = FastAPI()
 
-@app.get('/')
-def index():
-    return {
-        "name": "Mushvig",
-        "age": 23
-    }
+# @app.get('/')
+# def index():
+#     return {
+#         "name": "Mushvig",
+#         "age": 23
+#     }
