@@ -1,7 +1,10 @@
 aiosqlite==0.21.0
 annotated-types==0.7.0
 anyio==4.11.0
-bcrypt==5.0.0
+argon2-cffi==25.1.0
+argon2-cffi-bindings==25.1.0
+bcrypt==4.0.1
+cffi==2.0.0
 click==8.3.0
 colorama==0.4.6
 fastapi==0.119.0
@@ -9,6 +12,7 @@ h11==0.16.0
 idna==3.11
 iso8601==2.1.0
 passlib==1.7.4
+pycparser==2.23
 pydantic==2.12.2
 pydantic_core==2.41.4
 pypika-tortoise==0.6.2
