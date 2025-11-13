@@ -6,8 +6,8 @@ from auth.routers import router as auth_router
 
 
 app = FastAPI()
-app.include_router(todo_router, prefix="/todos")
-app.include_router(auth_router, prefix="/auth")
+app.include_router(auth_router, prefix="/auth", tags=["Auth endpoints"])
+app.include_router(todo_router, prefix="/todos", tags=["Todo endpoints"])
 
 init_db(app, ["todo.models", "auth.models"])
 

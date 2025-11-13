@@ -6,7 +6,7 @@ class User(Model):
     id = fields.IntField(primary_key=True)
 
     username = fields.CharField(max_length=20, unique=True)
-    email = fields.CharField(max_length=20, unique=True)
+    email = fields.CharField(max_length=50, unique=True)
 
     password = fields.CharField(max_length=255)
 
