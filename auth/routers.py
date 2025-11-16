@@ -9,7 +9,7 @@ from utils.token_manager import TokenManager
 router = APIRouter()
 
 
-@router.post('/create')
+@router.post('/sign-up')
 async def sign_up(data: ValidateUser):
     get_user = await User.get_or_none(Q(email=data.email) | Q(username=data.username))
     if get_user:

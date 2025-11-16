@@ -1,13 +1,13 @@
-from fastapi import APIRouter, HTTPException, status
-from todo.schemes import ShowTodo, TodoValidate, ChangeStatus
 from todo.models import Todo
-
+from fastapi import APIRouter, HTTPException, status, Depends
+from todo.schemes import ShowTodo, TodoValidate, ChangeStatus
+from utils.token_manager import TokenManager
 router = APIRouter()
 
 
 
 @router.get("/", response_model=list[ShowTodo])
-async def get_todo_items():
+async def get_todo_items(user_id: int = Depends(TokenManager.get_current_user)):
     todo_items = await Todo.all()
     return todo_items
 
