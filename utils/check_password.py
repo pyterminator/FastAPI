@@ -4,7 +4,7 @@
 class PasswordChecker:
 
     @staticmethod
-    def check_password(password: str):
+    def check_password(password: str)->bool:
         has_upper, has_lower, has_digit = (False, False, False)
 
         for ch in password:

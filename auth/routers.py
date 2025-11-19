@@ -15,11 +15,6 @@ async def sign_up(data: ValidateUser):
     if get_user:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Username və ya Email artıq istifadə olunmuşdur")
     else:
-
-        check_password = PasswordChecker.check_password(data.password)
-        if not check_password:
-            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Şifrə minimum 8 simvoldan ibarət olmalıdır. Tərkibində ən az bir böyük hərf, 1 kiçik hərf, 1 rəqəm olmalıdır")
-
         new_user = User(email=data.email, username=data.username)
         new_user.set_password(data.password)
         await new_user.save()
