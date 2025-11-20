@@ -1,9 +1,11 @@
-from pydantic import BaseModel, field_validator, EmailStr
-from utils.check_password import PasswordChecker
-from fastapi import HTTPException, status
 from string import ascii_lowercase
+from fastapi import HTTPException, status
+from utils.check_email import EmailChecker
+from utils.check_password import PasswordChecker
+from pydantic import BaseModel, field_validator, EmailStr
 
 class ValidateUser(BaseModel):
+
     username: str 
     email: EmailStr
     password: str 
@@ -14,6 +16,12 @@ class ValidateUser(BaseModel):
             raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Şifrə minimum 8 simvoldan ibarət olmalıdır. Tərkibində ən az bir böyük hərf, 1 kiçik hərf, 1 rəqəm və nöqtə olmalıdır")
         return password
     
+    @field_validator("email")
+    def check_email(cls, email):
+        if not EmailChecker.check_email(email): 
+            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="E-poçt doğru formada daxil edilməyib!")
+        return email 
+
     @field_validator("username")
     def check_username(cls, username):
         for ch in username:
