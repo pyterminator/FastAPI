@@ -11,7 +11,7 @@ class ValidateUser(BaseModel):
     @field_validator("password")
     def check_password(cls, password):
         if not PasswordChecker.check_password(password):
-            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Şifrə minimum 8 simvoldan ibarət olmalıdır. Tərkibində ən az bir böyük hərf, 1 kiçik hərf, 1 rəqəm olmalıdır")
+            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Şifrə minimum 8 simvoldan ibarət olmalıdır. Tərkibində ən az bir böyük hərf, 1 kiçik hərf, 1 rəqəm və nöqtə olmalıdır")
         return password
     
     @field_validator("username")
