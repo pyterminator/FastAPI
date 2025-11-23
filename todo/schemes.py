@@ -3,12 +3,12 @@ from typing import Optional
 
 class TodoValidate(BaseModel):
     description: str 
-    is_active: Optional[bool] = True
+    is_completed: Optional[bool] = False
 
 class ShowTodo(BaseModel):
     id: int
     description: str
-    is_active: bool
+    is_completed: bool
 
 class ChangeStatus(BaseModel):
-    is_active: bool
+    is_completed: bool
