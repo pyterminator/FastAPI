@@ -1,9 +1,9 @@
 import os 
 from jose import jwt 
-from fastapi import Depends, HTTPException, status
 from dotenv import load_dotenv
 from datetime import timedelta, datetime
-from fastapi.security import OAuth2PasswordBearer, HTTPBearer, HTTPAuthorizationCredentials
+from fastapi import Depends, HTTPException, status
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 
 
 load_dotenv()
@@ -12,8 +12,6 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 EXPIRE_DATE = int(os.getenv("EXPIRE_DATE"))
 ALGORITHM = os.getenv("ALGORITHM")
 
-
-# oauth2_scheme = OAuth2PasswordBearer(tokenUrl='/auth/sign-in')
 bearer_scheme = HTTPBearer()
 
 class TokenManager:
@@ -29,7 +27,6 @@ class TokenManager:
     @staticmethod
     def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(bearer_scheme)):
         token = credentials.credentials
-        # def get_current_user(token: str = Depends(oauth2_scheme)):
         try:
             payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
             user_id: int = payload.get("id")
