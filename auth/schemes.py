@@ -32,3 +32,6 @@ class ValidateUser(BaseModel):
 class ValidateLogin(BaseModel):
     email: str 
     password: str 
+
+class ValidateRefreshToken(BaseModel):
+    refresh_token: str
