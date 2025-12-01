@@ -1,12 +1,14 @@
 from pydantic import BaseModel
-from typing import Optional
 
-class TodoValidate(BaseModel):
-    description: str 
-    is_completed: Optional[bool] = False
+class CreateTodo(BaseModel):
+    description: str
+
+class UpdateTodo(BaseModel):
+    description: str
 
 class ShowTodo(BaseModel):
     id: int
+    user_id: int
     description: str
     is_completed: bool
 

@@ -7,7 +7,9 @@ bcrypt==4.0.1
 cffi==2.0.0
 click==8.3.0
 colorama==0.4.6
+dnspython==2.8.0
 ecdsa==0.19.1
+email-validator==2.3.0
 fastapi==0.119.0
 h11==0.16.0
 idna==3.11
