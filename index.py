@@ -5,7 +5,13 @@ from todo.routers import router as todo_router
 from auth.routers import router as auth_router
 
 
-app = FastAPI()
+app = FastAPI(
+        swagger_ui_parameters = { 
+            "defaultModelsExpandDepth": -1
+        },
+        title="TodoApp"
+    )
+
 app.include_router(auth_router, prefix="/auth", tags=["Auth endpoints"])
 app.include_router(todo_router, prefix="/todos", tags=["Todo endpoints"])
 
