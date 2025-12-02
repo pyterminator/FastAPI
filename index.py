@@ -15,7 +15,7 @@ app = FastAPI(
 app.include_router(auth_router, prefix="/auth", tags=["Auth endpoints"])
 app.include_router(todo_router, prefix="/todos", tags=["Todo endpoints"])
 
-init_db(app, ["todo.models", "auth.models"])
+init_db(app)
 
 if __name__ == "__main__":
     uvicorn.run(app="index:app", port=8000, reload=True)
